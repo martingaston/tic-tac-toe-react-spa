@@ -20,6 +20,9 @@ function App() {
           <div className='square available'></div>
         </div>
       </div>
+      <div className='message'>
+        <h2>Player X Wins!</h2>
+      </div>
     </div>
   );
 }
