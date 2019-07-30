@@ -1,7 +1,32 @@
 :root {
-    --black: hsl(120, 100, 0)
-    --white: hsl(15, 3, 98)
-    --grey: hsl(340, 1, 94)
-    --player-one: hsl(172, 24, 87)
-    --player-two: hsl(354, 73, 87)
+    --black: hsl(120, 100%, 0%);
+    --white: hsl(15, 50%, 98%);
+    --grey: hsl(340, 1, 94);
+    --player-one:hsl(172, 43%, 76%); 
+    --player-two: hsl(354, 71%, 55%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui;
+    color: var(--black);
+    background-color: var(--grey);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+a {
+    cursor: pointer;
 }
