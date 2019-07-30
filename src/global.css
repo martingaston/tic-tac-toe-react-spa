@@ -11,10 +11,20 @@
     margin: 0;
 }
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: system-ui;
     color: var(--black);
     background-color: var(--grey);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1,
@@ -29,4 +39,34 @@ h6 {
 
 a {
     cursor: pointer;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    border: 0.5rem solid var(--black);
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    border: 0.5rem solid var(--black);
+    border-width: 0.5rem 0;
+}
+
+.square {
+    background-color: var(--white);
+    border: 0.5rem solid var(--black);
+    border-width: 0 0.5rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
