@@ -1,30 +1,20 @@
 import React from 'react';
-import Square from './Square'
+import Row from './Row'
+import { splitEvery } from 'ramda'
+
+const createRows = (board) => splitEvery(3, board).map((row, index) => <Row key={index} row={index + 1} squares={row} onClick={console.log} />)
 
 function App() {
+  const board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', null]
   return (
     <div className="App">
       <div className="board">
-        <div className='row'>
-          <Square position={1} value='X' />
-          <Square position={2} value='O' />
-          <Square position={3} value='X' />
-        </div>
-        <div className='row'>
-          <Square position={4} value='O' />
-          <Square position={5} value='X' />
-          <Square position={6} value='O' />
-        </div>
-        <div className='row'>
-          <Square position={7} value='X' />
-          <Square position={8} value='O' />
-          <Square position={9} value='' onClick={console.log} />
-        </div>
+        {createRows(board)}
       </div>
       <div className='message'>
         <h2>Player X Wins!</h2>
       </div>
-    </div>
+    </div >
   );
 }
 
