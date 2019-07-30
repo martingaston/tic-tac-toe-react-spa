@@ -6,19 +6,19 @@ function App() {
     <div className="App">
       <div className="board">
         <div className='row'>
-          <Square position='1' value='X' />
-          <Square position='2' value='O' />
-          <Square position='3' value='X' />
+          <Square position={1} value='X' />
+          <Square position={2} value='O' />
+          <Square position={3} value='X' />
         </div>
         <div className='row'>
-          <Square position='4' value='O' />
-          <Square position='5' value='X' />
-          <Square position='6' value='O' />
+          <Square position={4} value='O' />
+          <Square position={5} value='X' />
+          <Square position={6} value='O' />
         </div>
         <div className='row'>
-          <Square position='7' value='X' />
-          <Square position='8' value='O' />
-          <Square position='9' value='' />
+          <Square position={7} value='X' />
+          <Square position={8} value='O' />
+          <Square position={9} value='' onClick={console.log} />
         </div>
       </div>
       <div className='message'>

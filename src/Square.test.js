@@ -11,7 +11,7 @@ afterEach(cleanup)
 
 describe('the Square component', () => {
     it('can render an empty square', () => {
-        const { getByLabelText } = render(<Square position='1' value='' />)
+        const { getByLabelText } = render(<Square position={1} value='' />)
 
         const square = getByLabelText('Square 1')
         expect(square).toBeEmpty()
@@ -19,16 +19,18 @@ describe('the Square component', () => {
 
     it('will let you click on an empty square', () => {
         const onClick = jest.fn()
-        const { getByLabelText } = render(<Square position='1' value='' onClick={onClick} />)
-        const square = getByLabelText('Square 1')
+        const { getByLabelText } = render(<Square position={5} value='' onClick={onClick} />)
+        const square = getByLabelText('Square 5')
+        const position = 5
 
         fireEvent.click(square)
 
-        expect(onClick).toHaveBeenCalled()
+        expect(onClick).toHaveBeenCalledTimes(1)
+        expect(onClick).toHaveBeenCalledWith(position)
     })
 
     it('can be rendered with a cross', () => {
-        const { getByLabelText } = render(<Square position='1' value='X' />)
+        const { getByLabelText } = render(<Square position={1} value='X' />)
 
         const square = getByLabelText('Square 1')
 
@@ -37,7 +39,7 @@ describe('the Square component', () => {
 
     it('will not let you click on an occupied square', () => {
         const onClick = jest.fn()
-        const { getByLabelText } = render(<Square position='1' value='X' onClick={onClick} />)
+        const { getByLabelText } = render(<Square position={1} value='X' onClick={onClick} />)
         const square = getByLabelText('Square 1')
 
         fireEvent.click(square)
