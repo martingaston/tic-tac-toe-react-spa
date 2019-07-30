@@ -1,7 +1,7 @@
 import React from 'react'
 import Square from './Square'
 
-const Row = ({ squares, row, onClick }) => (
+const Row = ({ squares, row = 1, onClick }) => (
     <div className='row'>
         {generateRowSquares(squares, row, onClick)}
     </div>
