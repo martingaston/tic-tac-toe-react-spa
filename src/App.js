@@ -1,23 +1,24 @@
 import React from 'react';
+import Square from './Square'
 
 function App() {
   return (
     <div className="App">
       <div className="board">
         <div className='row'>
-          <div className='square player-one'>X</div>
-          <div className='square player-two'>O</div>
-          <div className='square player-one'>X</div>
+          <Square position='1' value='X' />
+          <Square position='2' value='O' />
+          <Square position='3' value='X' />
         </div>
         <div className='row'>
-          <div className='square player-two'>O</div>
-          <div className='square player-one'>X</div>
-          <div className='square player-two'>O</div>
+          <Square position='4' value='O' />
+          <Square position='5' value='X' />
+          <Square position='6' value='O' />
         </div>
         <div className='row'>
-          <div className='square player-one'>X</div>
-          <div className='square player-two'>O</div>
-          <div className='square available'></div>
+          <Square position='7' value='X' />
+          <Square position='8' value='O' />
+          <Square position='9' value='' />
         </div>
       </div>
       <div className='message'>
