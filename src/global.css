@@ -4,6 +4,7 @@
     --black: hsl(120, 100%, 0%);
     --white: hsl(15, 50%, 98%);
     --grey: hsl(340, 1, 94);
+    --shadow: #ced3dc;
     --player-one:hsl(172, 43%, 76%); 
     --player-two: hsl(354, 71%, 55%);
 }
@@ -51,6 +52,7 @@ a {
     align-items: center;
     justify-content: center;
     border: 0.5rem solid var(--black);
+    box-shadow: 1rem 1rem var(--shadow);
 }
 
 .row {
