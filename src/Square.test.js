@@ -34,4 +34,15 @@ describe('the Square component', () => {
 
         expect(square).toHaveTextContent('X')
     })
+
+    it('will not let you click on an occupied square', () => {
+        const onClick = jest.fn()
+        const { getByLabelText } = render(<Square position='1' value='X' onClick={onClick} />)
+        const square = getByLabelText('Square 1')
+
+        fireEvent.click(square)
+
+        expect(onClick).not.toHaveBeenCalled()
+    })
+
 })

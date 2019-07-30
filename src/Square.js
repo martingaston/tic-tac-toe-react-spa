@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Square = ({ position, value, onClick }) => (
-    <button onClick={onClick} aria-label={`Square ${position}`} className='square player-one'>
+    <button onClick={value ? null : onClick} aria-label={`Square ${position}`} className={value === '' ? 'square available' : value === 'X' ? 'square player-one' : 'square player-two'}>
         {value}
     </button>
 )
