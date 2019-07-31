@@ -38,9 +38,9 @@ const hasWinner = board => {
   return (
     winningMoves.filter(
       move =>
-        getFromBoard(move[0]) != '' &&
-        getFromBoard(move[0]) == getFromBoard(move[1]) &&
-        getFromBoard(move[1]) == getFromBoard(move[2])
+        getFromBoard(move[0]) !== '' &&
+        getFromBoard(move[0]) === getFromBoard(move[1]) &&
+        getFromBoard(move[1]) === getFromBoard(move[2])
     ).length > 0
   )
 }
