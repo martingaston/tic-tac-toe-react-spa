@@ -1,6 +1,6 @@
-const referee = require('./referee')
-const messages = require('./messages')
-const minimax = require('./ai/minimaxPlayer')
+import referee from './referee'
+import messages from './messages'
+import minimax from './ai/minimaxPlayer'
 
 const swapPlayer = currentPlayer => (currentPlayer === 'X' ? 'O' : 'X')
 

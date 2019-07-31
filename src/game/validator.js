@@ -1,7 +1,7 @@
-const referee = require('./referee')
-const messages = require('./messages')
+import referee from './referee'
+import messages from './messages'
 
-module.exports = (input, board) => {
+export default (input, board) => {
   const base = 10
   const parsedInput = Number.parseInt(input, base)
 

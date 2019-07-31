@@ -1,6 +1,6 @@
-const update = require('./update')
-const referee = require('./referee')
-const game = require('./index')
+import update from './update'
+import referee from './referee'
+import game from './index'
 
 describe('the update function', () => {
   it('updates the board', () => {

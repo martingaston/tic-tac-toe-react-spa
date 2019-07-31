@@ -1,4 +1,4 @@
-const messages = require('./messages')
+import messages from './messages'
 
 describe('A messages object', () => {
   it('should have a title', () => {

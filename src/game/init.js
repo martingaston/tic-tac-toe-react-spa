@@ -1,7 +1,7 @@
-const messages = require('./messages')
-const referee = require('./referee')
+import messages from './messages'
+import referee from './referee'
 
-module.exports = (mode = 'human') => ({
+export default (mode = 'human') => ({
   isActive: true,
   board: referee.create(),
   messages: {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Row from './Row'
 import { splitEvery } from 'ramda'
 import update from '../game/update'
-const init = require('../game/init')
+import init from '../game/init'
 
 const createRows = (board, onClick) =>
   splitEvery(3, board).map((row, index) => (

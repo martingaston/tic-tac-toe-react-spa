@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: 'TIC TAC TOE',
   intro:
     'Win untold glory by successfully placing a complete line in any horizontal, vertical or diagonal direction.',

@@ -1,15 +1,15 @@
-const referee = require('../referee')
-const {
+import referee from '../referee'
+import {
   bestPositionReducer,
   maximumReducer,
   minimumReducer,
-} = require('./minimaxReducers')
+} from './minimaxReducers'
 
 const WINNING_SCORE = 10
 const LOSING_SCORE = -10
 const DRAW_SCORE = 0
 
-const initialise = (board, maximisingPlayer) => {
+const minimax = (board, maximisingPlayer) => {
   if (referee.available(board).length === 0) {
     throw new TypeError('Must supply a board board that is not full')
   }
@@ -68,4 +68,4 @@ const calculatePlayers = maximisingPlayer => ({
   minimiser: maximisingPlayer === 'X' ? 'O' : 'X',
 })
 
-module.exports = initialise
+export default minimax

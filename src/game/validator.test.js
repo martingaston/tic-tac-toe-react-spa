@@ -1,5 +1,5 @@
-const validator = require('./validator')
-const referee = require('./referee')
+import validator from './validator'
+import referee from './referee'
 
 describe('the validator function', () => {
   let board
