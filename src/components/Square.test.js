@@ -7,7 +7,7 @@ afterEach(cleanup)
 
 describe('the Square component', () => {
   it('can render an empty square', () => {
-    const { getByLabelText } = render(<Square position={1} value="" />)
+    const { getByLabelText } = render(<Square position={1} value={null} />)
 
     const square = getByLabelText('Square 1')
     expect(square).toBeEmpty()
@@ -16,7 +16,7 @@ describe('the Square component', () => {
   it('will let you click on an empty square', () => {
     const onClick = jest.fn()
     const { getByLabelText } = render(
-      <Square position={5} value="" onClick={onClick} />
+      <Square position={5} value={null} onClick={onClick} />
     )
     const square = getByLabelText('Square 5')
     const position = 5
