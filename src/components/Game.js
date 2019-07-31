@@ -5,7 +5,7 @@ import init from '../game/init'
 import parseMessage from '../utils/parseMessage'
 import parseRows from '../utils/parseRows'
 
-const Game = ({ mode = 'human' }) => {
+const Game = ({ mode }) => {
   const [game, updateGame] = useState(init(mode))
 
   const onClick = position => {
