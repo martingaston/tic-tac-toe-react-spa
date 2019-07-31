@@ -7,7 +7,7 @@ const createRows = board =>
     <Row key={index} row={index + 1} squares={row} onClick={console.log} />
   ))
 
-function App() {
+function Game() {
   const board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', null]
   return (
     <div className="App">
@@ -19,4 +19,4 @@ function App() {
   )
 }
 
-export default App
+export default Game
