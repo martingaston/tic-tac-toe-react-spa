@@ -1,13 +1,14 @@
 import React from 'react'
+import { EMPTY_SQUARE, PLAYER_CROSS_MARK } from '../constants'
 
 const Square = ({ position, value, onClick }) => (
   <button
-    onClick={value !== null ? null : () => onClick(position)}
+    onClick={value !== EMPTY_SQUARE ? null : () => onClick(position)}
     aria-label={`Square ${position}`}
     className={
       value === null
         ? 'square available'
-        : value === 'X'
+        : value === PLAYER_CROSS_MARK
         ? 'square player-one'
         : 'square player-two'
     }

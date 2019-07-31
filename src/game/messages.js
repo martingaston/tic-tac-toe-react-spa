@@ -11,5 +11,5 @@ export default {
   draw: "How unsatisfying! It's a draw!",
   unknownError: "Well, something's gone wrong somewhere.",
   winner: mark => `Player ${mark} wins!`,
-  turn: mark => `Player ${mark}'s turn: `,
+  turn: mark => `Player ${mark}'s turn`,
 }

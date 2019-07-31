@@ -3,6 +3,7 @@ import Row from './Row'
 import { splitEvery } from 'ramda'
 import update from '../game/update'
 import init from '../game/init'
+import { GAME_MODE, UNCLICKABLE_SQUARE, EMPTY_SQUARE } from '../constants'
 
 const createRows = (board, onClick) =>
   splitEvery(3, board).map((row, index) => (
@@ -13,10 +14,14 @@ const message = ({ isActive, messages }) =>
   isActive ? messages.turn : messages.ending
 
 const parseBoard = ({ isActive, board }) =>
-  isActive ? board : board.map(square => (square === null ? '' : square))
+  isActive
+    ? board
+    : board.map(square =>
+        square === EMPTY_SQUARE ? UNCLICKABLE_SQUARE : square
+      )
 
 function Game() {
-  const [game, updateGame] = useState(init('ai'))
+  const [game, updateGame] = useState(init(GAME_MODE))
   const board = parseBoard(game)
 
   const onClick = position => {
