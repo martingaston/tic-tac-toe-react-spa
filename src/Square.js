@@ -5,7 +5,7 @@ const Square = ({ position, value, onClick }) => (
     onClick={value ? null : () => onClick(position)}
     aria-label={`Square ${position}`}
     className={
-      value === ''
+      value === null
         ? 'square available'
         : value === 'X'
         ? 'square player-one'
