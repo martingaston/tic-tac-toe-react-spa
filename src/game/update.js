@@ -57,4 +57,4 @@ const gameOver = (board, currentPlayer) => ({
   },
 })
 
-module.exports = update
+export default update

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Square = ({ position, value, onClick }) => (
   <button
-    onClick={value ? null : () => onClick(position)}
+    onClick={value !== null ? null : () => onClick(position)}
     aria-label={`Square ${position}`}
     className={
       value === null
