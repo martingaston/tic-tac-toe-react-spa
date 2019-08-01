@@ -1,6 +1,6 @@
-const referee = require('./referee')
-const messages = require('./messages')
-const minimax = require('./ai/minimaxPlayer')
+import referee from './referee'
+import messages from './messages'
+import minimax from './ai/minimaxPlayer'
 
 const swapPlayer = currentPlayer => (currentPlayer === 'X' ? 'O' : 'X')
 
@@ -34,7 +34,7 @@ const update = (position, options) => {
 }
 
 const gameIsOver = board =>
-  referee.hasWinner(board) || referee.available(board).length <= 0
+  referee.hasWinner(board) || referee.boardIsFull(board)
 
 const nextMove = (board, options) => {
   const nextPlayer = swapPlayer(options.currentPlayer)
@@ -57,4 +57,4 @@ const gameOver = (board, currentPlayer) => ({
   },
 })
 
-module.exports = update
+export default update

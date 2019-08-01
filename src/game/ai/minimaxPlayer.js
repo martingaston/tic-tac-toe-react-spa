@@ -1,7 +1,5 @@
-const minimax = require('./minimax')
+import minimax from './minimax'
 
-module.exports = {
-  chooseMove: (board, state) => {
-    return minimax(state, 'O').position
-  },
+export default {
+  chooseMove: (board, state) => minimax(state, 'O').position,
 }

@@ -9,4 +9,4 @@ const minimumReducer = (acc, x) => (x < acc ? x : acc)
 
 const maximumReducer = (acc, x) => (x > acc ? x : acc)
 
-module.exports = { bestPositionReducer, minimumReducer, maximumReducer }
+export { bestPositionReducer, minimumReducer, maximumReducer }

@@ -1,4 +1,4 @@
-const init = require('./init')
+import init from './init'
 
 describe('the game initialiser', () => {
   const newGame = init()

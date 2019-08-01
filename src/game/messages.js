@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: 'TIC TAC TOE',
   intro:
     'Win untold glory by successfully placing a complete line in any horizontal, vertical or diagonal direction.',
@@ -11,5 +11,5 @@ module.exports = {
   draw: "How unsatisfying! It's a draw!",
   unknownError: "Well, something's gone wrong somewhere.",
   winner: mark => `Player ${mark} wins!`,
-  turn: mark => `Player ${mark}'s turn: `,
+  turn: mark => `Player ${mark}'s turn`,
 }

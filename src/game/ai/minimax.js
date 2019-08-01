@@ -1,17 +1,17 @@
-const referee = require('../referee')
-const {
+import referee from '../referee'
+import {
   bestPositionReducer,
   maximumReducer,
   minimumReducer,
-} = require('./minimaxReducers')
+} from './minimaxReducers'
 
 const WINNING_SCORE = 10
 const LOSING_SCORE = -10
 const DRAW_SCORE = 0
 
-const initialise = (board, maximisingPlayer) => {
-  if (referee.available(board).length === 0) {
-    throw new TypeError('Must supply a board board that is not full')
+const minimax = (board, maximisingPlayer) => {
+  if (referee.boardIsFull(board)) {
+    throw new TypeError('Must supply a board that is not full')
   }
 
   const players = calculatePlayers(maximisingPlayer)
@@ -27,10 +27,10 @@ const initialise = (board, maximisingPlayer) => {
 
 const scoreMax = (board, players) => {
   if (referee.hasWinner(board)) {
-    return WINNING_SCORE + referee.available(board).length
+    return WINNING_SCORE + getWeighting(board)
   }
 
-  if (referee.available(board).length === 0) {
+  if (referee.boardIsFull(board)) {
     return DRAW_SCORE
   }
 
@@ -46,10 +46,10 @@ const scoreMax = (board, players) => {
 
 const scoreMin = (board, players) => {
   if (referee.hasWinner(board)) {
-    return LOSING_SCORE - referee.available(board).length
+    return LOSING_SCORE - getWeighting(board)
   }
 
-  if (referee.available(board).length === 0) {
+  if (referee.boardIsFull(board)) {
     return DRAW_SCORE
   }
 
@@ -63,9 +63,11 @@ const scoreMin = (board, players) => {
   return scores
 }
 
+const getWeighting = board => referee.available(board).length
+
 const calculatePlayers = maximisingPlayer => ({
   maximiser: maximisingPlayer === 'X' ? 'X' : 'O',
   minimiser: maximisingPlayer === 'X' ? 'O' : 'X',
 })
 
-module.exports = initialise
+export default minimax

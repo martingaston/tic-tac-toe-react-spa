@@ -1,5 +1,5 @@
-const minimax = require('./minimax')
-const referee = require('../referee')
+import minimax from './minimax'
+import referee from '../referee'
 
 describe('the minimax algorithm', () => {
   let board

@@ -1,4 +1,4 @@
-const referee = require('./referee')
+import referee from './referee'
 
 describe('The referee object', () => {
   describe('With referee.create()', () => {

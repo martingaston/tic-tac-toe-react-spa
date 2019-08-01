@@ -54,13 +54,16 @@ const available = board => {
   )
 }
 
+const boardIsFull = board => available(board).length === 0
+
 const withinBounds = (number, board) => number > 0 && number <= board.length
 
-module.exports = {
+export default {
   create,
   get,
   update,
   hasWinner,
   withinBounds,
   available,
+  boardIsFull,
 }

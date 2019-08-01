@@ -1,8 +1,8 @@
-const init = require('./init')
-const update = require('./update')
-const validator = require('./validator')
+import init from './init'
+import update from './update'
+import validator from './validator'
 
-module.exports = {
+export default {
   init,
   update,
   validator,
