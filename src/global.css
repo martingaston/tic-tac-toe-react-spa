@@ -71,11 +71,11 @@ a {
     cursor: pointer;
 }
 
-.player-one {
+.player-X {
     color: var(--player-one)
 }
 
-.player-two {
+.player-O {
     color: var(--player-two)
 }
 
