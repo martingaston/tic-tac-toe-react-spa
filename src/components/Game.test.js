@@ -3,25 +3,36 @@ import Game from './Game'
 import { render, fireEvent, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-afterEach(cleanup)
-
-describe('a Game components', () => {
+describe('a Game component', () => {
   describe('in human v human mode', () => {
     it('can play a complete game where X wins', () => {
       const { getByText, getByLabelText } = render(<Game mode="human" />)
-      const squareOne = getByLabelText('Square 1')
-      const squareTwo = getByLabelText('Square 2')
-      const squareThree = getByLabelText('Square 3')
-      const squareFour = getByLabelText('Square 4')
-      const squareFive = getByLabelText('Square 5')
+      const crossMoves = [1, 2, 3]
+      const noughtMoves = [4, 5]
 
-      fireEvent.click(squareOne) // X's turn
-      fireEvent.click(squareFour) // O's turn
-      fireEvent.click(squareTwo) // X's turn
-      fireEvent.click(squareFive) // O's turn
-      fireEvent.click(squareThree) // X's turn
+      combineAlternating(crossMoves, noughtMoves).forEach(move =>
+        fireEvent.click(getByLabelText(`Square ${move}`))
+      )
 
       expect(getByText('Player X wins!')).toBeInTheDocument()
     })
   })
 })
+
+afterEach(cleanup)
+
+const combineAlternating = (current, alternate, combined = []) => {
+  if (current.length === 0) {
+    return combined.concat(alternate)
+  }
+
+  return combineAlternating(
+    alternate,
+    tail(current),
+    combined.concat(head(current))
+  )
+}
+
+const head = array => array.slice(0, 1)
+
+const tail = array => array.slice(1)
