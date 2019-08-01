@@ -12,7 +12,9 @@ describe('the Row component', () => {
 
     beforeEach(() => {
       const row = [null, null, null]
-      const rendered = render(<Row squares={row} row={1} onClick={onClick} />)
+      const rendered = render(
+        <Row squares={row} zeroIndexedRowNumber={0} onClick={onClick} />
+      )
       getByLabelText = rendered.getByLabelText
     })
 
@@ -39,7 +41,9 @@ describe('the Row component', () => {
 
     beforeEach(() => {
       const row = ['X', 'O', 'X']
-      const rendered = render(<Row squares={row} row={2} onClick={onClick} />)
+      const rendered = render(
+        <Row squares={row} zeroIndexedRowNumber={1} onClick={onClick} />
+      )
       getByLabelText = rendered.getByLabelText
     })
 

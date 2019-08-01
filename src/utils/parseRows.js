@@ -2,8 +2,6 @@ import React from 'react'
 import { splitEvery } from 'ramda'
 import { BOARD_SIZE, EMPTY_SQUARE, UNCLICKABLE_SQUARE } from '../constants'
 
-const zeroToOneIndex = number => number + 1
-
 const isBoardClickable = ({ isActive, board }) =>
   isActive
     ? board
@@ -18,7 +16,7 @@ export default (game, RowComponent, onClick) => {
   return splitEvery(rowSize, board).map((currentRow, index) => (
     <RowComponent
       key={index}
-      row={zeroToOneIndex(index)}
+      zeroIndexedRowNumber={index}
       squares={currentRow}
       onClick={onClick}
     />
