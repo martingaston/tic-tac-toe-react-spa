@@ -34,7 +34,7 @@ const update = (position, options) => {
 }
 
 const gameIsOver = board =>
-  referee.hasWinner(board) || referee.available(board).length <= 0
+  referee.hasWinner(board) || referee.boardIsFull(board)
 
 const nextMove = (board, options) => {
   const nextPlayer = swapPlayer(options.currentPlayer)
